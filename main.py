@@ -6,13 +6,9 @@ import config
 if config.REGENERATED == 1:
     exit('Token regenerated... Need to replace token with a new one. Token {0} does not match'.format(config.TOKEN))
 
-#Открытие лога...
-Log = open('C:/Users/Вар/Desktop/Discord-bot/log', 'a')
-
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as {0}!' .format(self.user))
-        Log.writelines('>>Session started.' + '\n')
  
     async def on_raw_reaction_add(self, payload):
         if payload.message_id == config.POST_ID:
@@ -27,11 +23,9 @@ class MyClient(discord.Client):
                 if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
                     await member.add_roles(role)
                     print('[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
-                    Log.writelines('\n' + '>>Given role {1.name} to {0.display_name}'.format(member,role) + '\n')
                 else:
                     await message.remove_reaction(payload.emoji, member)
                     print('[ERROR] Too many roles for user {0.display_name}'.format(member))
-                    Log.writelines('\n' + '>>{0.display_name} has too much roles, to be given another'.format(member) + '\n')
            
             except KeyError as e:
                 print('[ERROR] KeyError, no role found for ' + emoji)
@@ -49,7 +43,6 @@ class MyClient(discord.Client):
  
             await member.remove_roles(role)
             print('[SUCCESS] Role {1.name} has been remove for user {0.display_name}'.format(member, role))
-            Log.writelines('\n' + '>>Role {1.name} revoked from {0.displeay_name}'.format(member, role) + '\n')
  
         except KeyError as e:
             print('[ERROR] KeyError, no role found for ' + emoji)
@@ -66,7 +59,6 @@ import config
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
-        Log.writelines('>>Session started.' + '\n')
 
  
     async def on_raw_reaction_add(self, payload):
@@ -82,11 +74,9 @@ class MyClient(discord.Client):
                 if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
                     await member.add_roles(role)
                     print('[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
-                    Log.writelines('\n' + '>>Given role {1.name} to {0.display_name}'.format(member,role) + '\n')
                 else:
                     await message.remove_reaction(payload.emoji, member)
                     print('[ERROR] Too many roles for user {0.display_name}'.format(member))
-                    Log.writelines('\n' + '>>{0.display_name} has too much roles, to be given another'.format(member) + '\n')
            
             except KeyError as e:
                 print('[ERROR] KeyError, no role found for ' + emoji)
@@ -104,7 +94,6 @@ class MyClient(discord.Client):
  
             await member.remove_roles(role)
             print('[SUCCESS] Role {1.name} has been remove for user {0.display_name}'.format(member, role))
-            Log.writelines('\n' + '>>Role {1.name} revoked from {0.displeay_name}'.format(member, role) + '\n')
  
         except KeyError as e:
             print('[ERROR] KeyError, no role found for ' + emoji)
