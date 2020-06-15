@@ -1,4 +1,4 @@
-TOKEN = 'NzIwNjMwODAxMTM3NDAxOTI2.XuY_SA.YDATACwjGvh8KaOWmPD-4-ImvPI' #Токен бота(должен держаться в секрете(В противном случае регенерировать и поставить пометку REGENERATED = 1))
+TOKEN = 'NzIwNjMwODAxMTM3NDAxOTI2.Xufmmw.obH59F3rooorPK_lsvv7fYQvCLk' #Токен бота(должен держаться в секрете(В противном случае регенерировать и поставить пометку REGENERATED = 1))
 REGENERATED = 0
 
 POST_ID = 721747732284440610 #Пост с которого должна читаться реакция
