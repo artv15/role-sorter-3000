@@ -1,10 +1,10 @@
 import os
 
 
-TOKEN = os.environ.get('BOT_TOKEN') #Токен бота(должен держаться в секрете(В противном случае регенерировать и поставить пометку REGENERATED = 1))
+TOKEN = os.environ.get('BOT_TOKEN') #Токен бота. Получается с config var BOT_TOKEN
 REGENERATED = 0
 
-POST_ID = 721747732284440610 #Пост с которого должна читаться реакция
+POST_ID = 722505136890707988 #Пост с которого должна читаться реакция
 
 ROLES = {
     '✅': 718805239226040336 #CLASS-D role
