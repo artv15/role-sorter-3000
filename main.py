@@ -1,7 +1,7 @@
 import discord
 from discord import utils
 import config
-
+from discord.ext import commands
 if config.REGENERATED == 1:
     exit('Token regenerated... Need to replace token with a new one. Token {0} does not match'.format(config.TOKEN))
 
