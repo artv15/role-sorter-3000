@@ -9,7 +9,7 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print('>>Session as {0} started!' .format(self.user))
  
-    @bot.command(pass_content = True)
+    @self.command(pass_content = True)
     async def ping():
         await bot.say('Pong!')
 
