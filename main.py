@@ -1,6 +1,5 @@
 import discord
 from discord import utils
-import ping-pong
 import config
 
 if config.REGENERATED == 1:
