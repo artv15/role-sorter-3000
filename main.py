@@ -8,10 +8,6 @@ if config.REGENERATED == 1:
 class MyClient(discord.Client):
     async def on_ready(self):
         print('>>Session as {0} started!' .format(self.user))
- 
-    @self.command(pass_content = True)
-    async def ping():
-        await bot.say('Pong!')
 
     async def on_raw_reaction_add(self, payload):
         if payload.message_id == config.POST_ID:
