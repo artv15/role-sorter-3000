@@ -19,7 +19,7 @@ class MyClient(discord.Client):
                 emoji = str(payload.emoji) # эмоджик который выбрал юзер
                 role = utils.get(message.guild.roles, id=config.ROLES[emoji]) # объект выбранной роли (если есть)
            
-                if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
+                if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= 1):
                     await member.add_roles(role)
                     print('>>[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
                 else:
