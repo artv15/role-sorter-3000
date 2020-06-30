@@ -21,6 +21,7 @@ class MyClient(discord.Client):
            
                 if(len([i for i in member.roles if i.id not in config.EXCROLES]) <= config.MAX_ROLES_PER_USER):
                     await member.add_roles(role)
+                    await member.remove_roles(727642100937785455)
                     print('>>[SUCCESS] User {0.display_name} has been granted with role {1.name}'.format(member, role))
                 else:
                     await message.remove_reaction(payload.emoji, member)
@@ -41,6 +42,7 @@ class MyClient(discord.Client):
             role = utils.get(message.guild.roles, id=config.ROLES[emoji]) # объект выбранной роли (если есть)
  
             await member.remove_roles(role)
+            await member.add_roles(727642100937785455)
             print('>>[SUCCESS] Role {1.name} has been remove for user {0.display_name}'.format(member, role))
  
         except KeyError as e:
